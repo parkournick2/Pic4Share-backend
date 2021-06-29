@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS pictures (
 	author VARCHAR(64),
 	date Date,
 	file VARCHAR (128),
-	collection VARCHAR(64)
+	collection VARCHAR(64),
+  FOREIGN KEY (author) REFERENCES users(nickname)
 );
 
 CREATE TABLE IF NOT EXISTS picture_tags (
