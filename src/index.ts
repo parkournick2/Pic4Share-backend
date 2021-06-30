@@ -1,6 +1,4 @@
-import { Request, Response } from "express";
-import app from "./app";
+import app from "./controllers/app";
+import { userRouter } from "./routers/userRouter";
 
-app.get('/ping', (req: Request, res: Response)=>{
-  res.send('pong')
-})
+app.use('/user', userRouter)
