@@ -1,5 +1,5 @@
 import HashManager from "../middlewares/HashManager";
-import { user, userLogin } from "../models/userModels";
+import { user } from "../models/userModels";
 import connection from "./connection";
 
 class UserDatabase {
