@@ -14,10 +14,10 @@ export default class UserController {
       const token = await UserBusiness.signup(input);
       res.status(200).send({ token });
     } catch (error) {
-      if (error.sqlMessage.includes("' for key 'PRIMARY'")) {
+      if (error.sqlMessage.includes("' for key 'users.PRIMARY'")) {
         res.status(400).send({ error: "nickname já cadastrado" });
       }
-      if (error.sqlMessage.includes("' for key 'email'")) {
+      if (error.sqlMessage.includes("' for key 'users.email'")) {
         res.status(400).send({ error: "email já cadastrado" });
       }
 
