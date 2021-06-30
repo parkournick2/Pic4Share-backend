@@ -1,6 +1,9 @@
 import * as bcrypt from 'bcryptjs';
+import { config } from "dotenv";
 
-export class HashManager {
+config();
+
+class HashManager {
   cost: number = Number(process.env.BCRYPT_COST);
 
   hash(plainText: string): string{
@@ -9,6 +12,8 @@ export class HashManager {
   }
 
   compare(plainText: string, cypherText: string): boolean{
-    return true;
+    return bcrypt.compareSync(plainText,cypherText);
   }
 }
+
+export default new HashManager();
