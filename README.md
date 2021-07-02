@@ -4,6 +4,9 @@
 `npm run start`
 `npm run dev`
 
+## API
+`http://ec2-54-172-103-84.compute-1.amazonaws.com/`
+
 ## Endpoints
 - login
 ![image](https://user-images.githubusercontent.com/61525227/124323710-23410200-db58-11eb-9b2a-ca09b2058ad8.png)
