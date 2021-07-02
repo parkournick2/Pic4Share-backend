@@ -20,7 +20,7 @@
 <br>
 <br>
 
-- signup
+- getAllPictures
 ![image](https://user-images.githubusercontent.com/61525227/124324033-a5c9c180-db58-11eb-86c4-1c757af45784.png)
 <br>
 <br>
