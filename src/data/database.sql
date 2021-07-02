@@ -13,23 +13,7 @@ CREATE TABLE IF NOT EXISTS pictures (
   id VARCHAR(128) UNIQUE PRIMARY KEY,
 	subtitle VARCHAR(128),
 	author VARCHAR(64),
-	date Date,
+	date VARCHAR(64),
 	file VARCHAR (128),
-	collection VARCHAR(64),
-  FOREIGN KEY (author) REFERENCES users(nickname)
+  tags VARCHAR (128)
 );
-
-CREATE TABLE IF NOT EXISTS picture_tags (
-  picture_id VARCHAR(128),
-  tag VARCHAR(64),
-  PRIMARY KEY (picture_id, tag),
-  FOREIGN KEY (picture_id) REFERENCES pictures(id)
-);
-
-
-/*
-  OPERAÇÕES
-*/
-
-/*SELECIONAR TODAS AS TAGS DE UMA IMAGEM*/
-SELECT tag FROM picture_tags WHERE picture_id = 123;
