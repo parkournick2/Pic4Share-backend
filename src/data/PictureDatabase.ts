@@ -1,5 +1,5 @@
 import IdGenerator from "../middlewares/IdGenerator";
-import { createPictureDTO } from "../models/pictureModels";
+import { createPictureDTO, searchPictureDTO } from "../models/pictureModels";
 import connection from "./connection";
 
 class PictureDatabase {
@@ -14,6 +14,22 @@ class PictureDatabase {
       SELECT * FROM ${this.tableName}
     `);
     return result;
+  };
+
+  searchPicture = async (input: searchPictureDTO) => {
+    const [result] = await connection.raw(`
+    SELECT
+    *
+    FROM
+      picture
+    WHERE
+      album_id = '${input.album_id}'
+      AND (
+        title LIKE '%${input.text}%'
+        OR tags LIKE '%${input.text}%'
+      );
+    `);
+    return result
   };
 
   createPicture = async (picture: createPictureDTO) => {

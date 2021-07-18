@@ -15,3 +15,8 @@ export type createPictureDTO = {
   url: string;
   album_id: string;
 };
+
+export type searchPictureDTO = {
+  album_id: string;
+  text: string;
+};
