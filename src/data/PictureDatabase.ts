@@ -14,19 +14,39 @@ class PictureDatabase {
       SELECT * FROM ${this.tableName}
     `);
     return result;
-  }
+  };
 
   createPicture = async (picture: createPictureDTO) => {
     const id = IdGenerator.generate();
     await connection.raw(`
-      INSERT INTO ${this.tableName} (id, subtitle, author, date, file, tags ) VALUES (
-        "${id}",
-        "${picture.subtitle}",
-        "${picture.author}",
-        "${Date.now()}",
-        "${picture.file}",
-        "${picture.tags}"
-      );
+    INSERT INTO
+    picture (
+      id,
+      title,
+      user_nickname,
+      tags,
+      url,
+      album_id,
+      date
+    )
+    VALUES
+    (
+      '${IdGenerator.generate()}',
+      '${picture.title}',
+      '${picture.user_nickname}',
+      '${picture.tags}',
+      '${picture.url}',
+      '${picture.album_id}',
+      NOW()
+    );
+    `);
+    await connection.raw(`
+    UPDATE
+      album
+    SET
+      background = '${picture.url}'
+    WHERE
+      id = '${picture.album_id}';
     `);
   };
 }
