@@ -1,16 +1,17 @@
 export type picture = {
   id: string;
-  subtitle: string;
-  author: string;
-  date: Date;
-  file: string;
+  title: string;
+  user_nickname: string;
   tags: string;
+  url: string;
+  album_id: string;
+  date: Date;
 };
 
 export type createPictureDTO = {
-  subtitle: string;
-  author: string;
-  file: string;
+  title: string;
+  user_nickname: string;
   tags: string;
+  url: string;
+  album_id: string;
 };
-
