@@ -17,7 +17,6 @@ class PictureDatabase {
   };
 
   createPicture = async (picture: createPictureDTO) => {
-    const id = IdGenerator.generate();
     await connection.raw(`
     INSERT INTO
     picture (

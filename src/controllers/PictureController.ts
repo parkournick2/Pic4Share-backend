@@ -5,7 +5,7 @@ import { UnauthorizedError } from "../error/UnauthorizedError";
 import Authenticator from "../middlewares/Authenticator";
 import { createPictureDTO } from "../models/pictureModels";
 
-export default class PictureController {
+class PictureController {
   createPicture = async (req: Request, res: Response) => {
     try {
       const tokenData = Authenticator.getData(req.headers.authorization!);
@@ -32,3 +32,5 @@ export default class PictureController {
     }
   };
 }
+
+export default new PictureController();

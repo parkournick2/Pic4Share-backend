@@ -39,7 +39,7 @@ VALUES
     'nicolas@nicolas.com'
   );
 
--- GetAllAlbuns
+-- GetAllAlbums
 SELECT
   *
 FROM
@@ -48,7 +48,8 @@ FROM
 SELECT
   COUNT(*) AS count
 FROM
-  album;
+  picture
+WHERE album_id = 'a155c1e2-5801-47cc-b761-94fbe4127066';
 
 -- CreateAlbum
 INSERT INTO

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import UserBusiness from "../business/UserBusiness";
 import { user, userLogin } from "../models/userModels";
 
-export default class UserController {
+class UserController {
   signup = async (req: Request, res: Response) => {
     try {
       const input: user = {
@@ -38,3 +38,5 @@ export default class UserController {
     }
   };
 }
+
+export default new UserController();
