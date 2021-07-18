@@ -10,10 +10,11 @@ export default class PictureController {
     try {
       const tokenData = Authenticator.getData(req.headers.authorization!);
       const input: createPictureDTO = {
-        subtitle: req.body.subtitle,
-        author: tokenData.nickname,
-        file: req.body.file,
+        title: req.body.title,
+        user_nickname: tokenData.nickname,
+        url: req.body.url,
         tags: req.body.tags,
+        album_id: req.body.albumId,
       };
       const message = await PictureBusiness.createPicture(input);
       res.status(200).send({ message });

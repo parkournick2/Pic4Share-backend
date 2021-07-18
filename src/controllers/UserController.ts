@@ -15,7 +15,7 @@ export default class UserController {
       res.status(200).send({ token });
     } catch (error) {
       if (error.sqlMessage) {
-        if (error.sqlMessage.includes("' for key 'users.PRIMARY'")) {
+        if (error.sqlMessage.includes("' for key 'users.nickname'")) {
           res.status(400).send({ error: "nickname já cadastrado" });
         }
         if (error.sqlMessage.includes("' for key 'users.email'")) {

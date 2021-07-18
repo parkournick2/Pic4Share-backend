@@ -5,9 +5,9 @@ import { createPictureDTO } from "../models/pictureModels";
 
 class PictureBusiness {
   createPicture = async (picture: createPictureDTO) => {
-    if (!picture.file || !picture.subtitle || !picture.tags) {
+    if (!picture.title || !picture.user_nickname || !picture.url || !picture.tags || !picture.album_id) {
       throw new InvalidInputError(
-        "Preencha os campos 'file', 'subtitle', 'tags'"
+        "Preencha os campos 'title', 'tags', 'url', 'albumId'"
       );
     }
     await PictureDatabase.createPicture(picture);

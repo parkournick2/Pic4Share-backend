@@ -5,7 +5,7 @@ import connection from "./connection";
 class PictureDatabase {
   tableName: string;
 
-  constructor(tableName: string = "pictures") {
+  constructor(tableName: string = "picture") {
     this.tableName = tableName;
   }
 
