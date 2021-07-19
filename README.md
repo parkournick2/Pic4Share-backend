@@ -30,7 +30,7 @@ Node.js
 Clique [aqui](http://pic4share-api-doc.surge.sh/) para acessar.
 
 
-### :tools: Construído com
+### :game_die: Construído com
 
 * [Node.js](https://nodejs.org/en/) - Engine
 * [Typescript](https://www.typescriptlang.org/) - Linguagem usada
