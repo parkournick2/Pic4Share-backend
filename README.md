@@ -1,4 +1,7 @@
-# Pic4Share-backend
+# Pic4Share API
+Projeto fullstack
+
+http://pic4share-api-doc.surge.sh/
 
 ## Scripts
 `npm run start`
