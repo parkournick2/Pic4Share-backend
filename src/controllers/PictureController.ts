@@ -19,6 +19,17 @@ class PictureController {
       const message = await PictureBusiness.createPicture(input);
       res.status(200).send({ message });
     } catch (error) {
+      if(error.sqlMessage){
+        if(error.sqlMessage.includes('picture.title')){
+          res.status(400).send({error: 'Já existe uma imagem com esse nome'})
+        }
+        if(error.sqlMessage.includes('picture.url')){
+          res.status(400).send({error: 'Essa imagem já foi postada'})
+        }
+        if(error.sqlMessage.includes('album_id')){
+          res.status(400).send({error: 'Id do album inválido'})
+        }
+      }
       res.status(400).send({ error: error.message });
     }
   };

@@ -17,10 +17,10 @@ CREATE TABLE IF NOT EXISTS album (
 
 CREATE TABLE IF NOT EXISTS picture (
   id VARCHAR(128) UNIQUE PRIMARY KEY,
-  title VARCHAR(128),
+  title VARCHAR(128) UNIQUE,
   user_nickname VARCHAR(64),
   tags VARCHAR(128),
-  url VARCHAR (128),
+  url VARCHAR (128) UNIQUE,
   album_id VARCHAR (128),
   date DATE,
   FOREIGN KEY (user_nickname) REFERENCES user(nickname),
