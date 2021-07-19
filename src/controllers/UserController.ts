@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import UserBusiness from "../business/UserBusiness";
 import { user, userLogin } from "../models/userModels";
 
-export default class UserController {
+class UserController {
   signup = async (req: Request, res: Response) => {
     try {
       const input: user = {
@@ -15,7 +15,7 @@ export default class UserController {
       res.status(200).send({ token });
     } catch (error) {
       if (error.sqlMessage) {
-        if (error.sqlMessage.includes("' for key 'users.PRIMARY'")) {
+        if (error.sqlMessage.includes("' for key 'users.nickname'")) {
           res.status(400).send({ error: "nickname já cadastrado" });
         }
         if (error.sqlMessage.includes("' for key 'users.email'")) {
@@ -38,3 +38,5 @@ export default class UserController {
     }
   };
 }
+
+export default new UserController();

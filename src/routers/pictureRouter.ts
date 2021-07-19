@@ -1,8 +1,9 @@
-import express from"express";
+import express from "express";
 import PictureController from "../controllers/PictureController";
 
-export const pictureRouter = express.Router();
-const controller = new PictureController();
+const pictureRouter = express.Router();
 
-pictureRouter.post('/create', controller.createPicture);
-pictureRouter.get('/all', controller.getAllPictures);
+pictureRouter.post("/create", PictureController.createPicture);
+pictureRouter.get("/search", PictureController.searchPicture);
+
+export default pictureRouter;

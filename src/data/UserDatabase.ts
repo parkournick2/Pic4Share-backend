@@ -1,11 +1,12 @@
 import HashManager from "../middlewares/HashManager";
+import IdGenerator from "../middlewares/IdGenerator";
 import { user } from "../models/userModels";
 import connection from "./connection";
 
 class UserDatabase {
   tableName: string;
 
-  constructor(tableName: string = "users") {
+  constructor(tableName: string = "user") {
     this.tableName = tableName;
   }
 
@@ -14,16 +15,20 @@ class UserDatabase {
       SELECT * FROM ${this.tableName} WHERE nickname = '${nickname}';
     `);
     return result[0];
-  }
+  };
 
   createUser = async (user: user) => {
     await connection.raw(`
-      INSERT INTO ${this.tableName} (nickname, email, name, password) VALUES (
-        '${user.nickname}',
-        '${user.email}',
-        '${user.name}',
-        '${HashManager.hash(user.password)}'
-      );
+    INSERT INTO
+      user (id, nickname, name, password, email)
+    VALUES
+    (
+      '${IdGenerator.generate()}',
+      '${user.nickname}',
+      '${user.name}',
+      '${HashManager.hash(user.password)}',
+      '${user.email}'
+    );
     `);
   };
 }
