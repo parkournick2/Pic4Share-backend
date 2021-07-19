@@ -1,32 +1,40 @@
 # Pic4Share API
-Projeto fullstack
+Projeto fullstack de um site de imagens
 
 http://pic4share-api-doc.surge.sh/
 
-## Scripts
-`npm run start`
-`npm run dev`
 
-## API
-`http://ec2-54-172-103-84.compute-1.amazonaws.com/`
+### :clipboard: Pré-requisitos
 
-## Endpoints
-- login
-![image](https://user-images.githubusercontent.com/61525227/124323710-23410200-db58-11eb-9b2a-ca09b2058ad8.png)
-<br>
-<br>
+Node.js
 
-- signup
-![image](https://user-images.githubusercontent.com/61525227/124323784-3eac0d00-db58-11eb-89fe-0ff8515f85d5.png)
-<br>
-<br>
 
-- createPicture
-![image](https://user-images.githubusercontent.com/61525227/124323918-761ab980-db58-11eb-89e7-c11b172288d1.png)
-<br>
-<br>
+### :wrench: Instalação
 
-- getAllPictures
-![image](https://user-images.githubusercontent.com/61525227/124324033-a5c9c180-db58-11eb-86c4-1c757af45784.png)
-<br>
-<br>
+``npm install``
+
+
+
+### :page_facing_up: Scripts
+``npm start``
+
+``npm run dev``
+
+``npm run build``
+
+``npm run update``
+
+
+### :package: API
+
+Clique [aqui](http://pic4share-api-doc.surge.sh/) para acessar.
+
+
+### :tools: Construído com
+
+* [Node.js](https://nodejs.org/en/) - Engine
+* [Typescript](https://www.typescriptlang.org/) - Linguagem usada
+* [Express](https://expressjs.com/pt-br/) - Framework backend
+* [MySQL](https://www.mysql.com/) - DBMS
+
+---
