@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "clear && ts-node-dev ./src/index.ts",
-    "start": "tsc && node ./build/index.js"
+    "start": "tsc && node ./build/index.js",
+    "build": "tsc",
+    "update": "pm2 stop 0 && git pull && tsc && pm2 start build/index.js"
   },
   "repository": {
     "type": "git",
