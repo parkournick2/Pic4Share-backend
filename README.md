@@ -25,7 +25,7 @@ Node.js
 ``npm run update``
 
 
-### :package: API
+### :package: Documentação
 
 Clique [aqui](http://pic4share-api-doc.surge.sh/) para acessar.
 
